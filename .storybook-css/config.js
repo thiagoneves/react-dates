@@ -15,7 +15,7 @@ registerInterfaceWithDefaultTheme(CSSInterface);
 
 addDecorator((story) => {
   moment.locale('en');
-  return (story());
+  return story();
 });
 
 function getLink(href, text) {
@@ -42,9 +42,8 @@ addDecorator(story => (
         padding: '8px 40px 8px 8px',
         overflow: 'scroll',
       }}
-    >
-      <span dangerouslySetInnerHTML={{ __html: helperText }} />
-    </div>
+      dangerouslySetInnerHTML={{ __html: helperText }}
+    />
 
     <div style={{ marginTop: 7 * 8 }}>
       {story()}
@@ -69,7 +68,6 @@ function loadStories() {
   require('../stories/DayPickerRangeController');
   require('../stories/DayPickerSingleDateController');
   require('../stories/DayPicker');
-  require('../stories/withStyles');
 }
 
 setAddon(infoAddon);

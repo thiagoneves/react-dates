@@ -4,8 +4,9 @@
   "description": "A responsive and accessible date range picker component built with React",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && npm run build:js && npm run build:svg && mkdir lib/css && npm run build:css -- --optimize ",
+    "build": "npm run clean && npm run build:js && npm run build:svg && npm run build:css -- --optimize ",
     "build:js": "babel src/ -d lib/ --ignore src/components",
+    "prebuild:css": "rimraf lib/css && mkdir -p lib/css",
     "build:css": "node scripts/buildCSS.js",
     "build:svg": "webpack",
     "clean": "rimraf lib",
@@ -116,7 +117,7 @@
     "prop-types": "^15.5.10",
     "react-moment-proptypes": "^1.5.0",
     "react-portal": "^3.1.0",
-    "react-with-styles": "^2.1.0",
+    "react-with-styles": "^2.2.0",
     "react-with-styles-interface-css": "^1.1.0"
   },
   "peerDependencies": {
